@@ -6,6 +6,7 @@ import * as cookieParser from 'cookie-parser';
 import * as bodyParser from 'body-parser';
 
 import configureProxies from './lib/booting/proxies';
+import configureRedirects from './lib/booting/redirects';
 import { redirectToLanguage } from './lib/translate';
 import configureNunjucks from './lib/booting/nunjucks';
 import configureSass from './lib/booting/compileSass';
@@ -61,6 +62,8 @@ class App {
             req.lang = req.params.lang;
             next();
         });
+
+        this.app.use('*', configureRedirects);
 
         this.app.use(langRoute, enrouten({
             directory: 'controllers'

@@ -1,0 +1,14 @@
+node_modules
+test/performance-results
+test/unit/data
+test-results
+
+*.spec.js
+*.spec.ts
+jasmine-runner-api.js
+
+src/public/
+
+dist
+
+package-lock.json

@@ -1,0 +1,17 @@
+{% extends "base.njk" %}
+
+{% block title %}{{ "anErrorOccurred" | translate(req.lang) }}{% endblock %}
+
+{% block content %}
+    {% if message %}
+        <div>{{ message }}</div>
+    {% endif %}
+
+    <div>
+        {% if error %}
+            {{ error }}
+        {% else %}
+            {{ "anErrorOccurred" | translate(req.lang) }}
+        {% endif %}
+    </div>
+{% endblock %}

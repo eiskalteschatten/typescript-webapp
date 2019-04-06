@@ -1,0 +1,15 @@
+version: '3.1'
+services:
+
+    app:
+        build: .
+        command: npm run start:dev
+        volumes:
+            - "./src:/app/src"
+        ports:
+            - "3025:3025"
+            - "5858:5858"
+        cap_drop:
+            - ALL
+        cap_add:
+            - CHOWN

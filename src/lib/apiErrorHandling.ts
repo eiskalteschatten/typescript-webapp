@@ -4,7 +4,7 @@ import { translate }  from './translate';
 import HttpError from '../errors/HttpError';
 
 
-export function returnError(error: HttpError, res: Response, req: Request): void {
+export function returnError(error: HttpError, req: Request, res: Response): void {
     if (error.status) {
         res.status(error.status).send(error.message);
     }

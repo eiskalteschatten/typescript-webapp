@@ -107,12 +107,6 @@ npm run docker:rebuild
 npm run lint
 ```
 
-**Clean Up Generated CSS Files**
-
-```bash
-npm run cleanup
-```
-
 
 ---
 

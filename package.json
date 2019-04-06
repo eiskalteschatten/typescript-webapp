@@ -12,7 +12,6 @@
         "docker": "bash -c \"trap 'docker-compose down' EXIT; docker-compose up\"",
         "docker:rebuild": "bash -c \"trap 'docker-compose down' EXIT; docker-compose up --build\"",
         "docker:start": "bash -c \"trap 'docker-compose down' EXIT; docker-compose up\"",
-        "cleanup": "node -e 'require(\"./src/lib/exitCleanup\")()'",
         "test": "npm run lint",
         "lint": "./node_modules/.bin/eslint ./**/*.{ts,json}"
     },

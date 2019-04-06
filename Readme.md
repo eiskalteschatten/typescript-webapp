@@ -4,7 +4,7 @@ This project is a boilerplate web app based on TypeScript. It includes a few fea
 
 There is also a [version written in plain Node.js](https://github.com/eiskalteschatten/nodejs-webapp).
 
-But why are there so few commits? This project has existed for a long time and has formed the basis for many a Node.js application, but was in a private repository for most of its existence. It included several items that needed to remain private, so the commit history was deleted along with those items when preparing it to go open source.
+But why are there so few commits? This project has existed for a long time and has formed the basis for many a TypeScript application, but was in a private repository for most of its existence. It included several items that needed to remain private, so the commit history was deleted along with those items when preparing it to go open source.
 
 
 ## Table of Contents
@@ -13,6 +13,7 @@ But why are there so few commits? This project has existed for a long time and h
 - <a href="#included-frameworks">Included Frameworks</a>
 - <a href="#features">Features</a>
 - <a href="#usage">Usage</a>
+- <a href="#contributing">Contributing</a>
 
 ## Requirements
 
@@ -106,6 +107,12 @@ npm run docker:rebuild
 ```bash
 npm run lint
 ```
+
+## Contributing
+
+If you would like to contribute to the project, feel free to fork the repository and make a pull request. When committing, Husky will create a commit hook that will automatically lint your code before it allows you to commit, so it is recommended to lint any changes before committing by running `npm run lint`.
+
+If you find a bug or any other issues or have any feature requests, don't hesitate to create a GitHub issue.
 
 
 ---

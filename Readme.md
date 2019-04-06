@@ -12,6 +12,7 @@ But why are there so few commits? This project has existed for a long time and h
 - <a href="#requirements">Requirements</a>
 - <a href="#included-frameworks">Included Frameworks</a>
 - <a href="#features">Features</a>
+- <a href="#usage">Usage</a>
 
 ## Requirements
 
@@ -53,6 +54,64 @@ But why are there so few commits? This project has existed for a long time and h
 - Ability to create proxy routes (i.e. for frameworks like jQuery which appear in the `node_modules` folder) so that they have an URL accessible from the browser such as `/js/libs/jquery.min.js`)
 - Automatic TypeScript compilation and server restart when developing
 - Pre-made Dockerfile
+
+
+## Usage
+
+Before you use the application, you need to install all dependencies with:
+
+```bash
+npm install
+```
+
+
+**Start in development mode**
+
+```bash
+npm run start:dev
+```
+
+**Start in production mode**
+
+```bash
+npm run start:prod
+```
+
+**Build TypeScript**
+
+```bash
+npm run build
+```
+
+**Build TypeScript in development mode**
+
+```bash
+npm run build:dev
+```
+
+**Start with Docker**
+
+```bash
+npm run docker
+```
+
+**Start and Rebuild Docker Image**
+
+```bash
+npm run docker:rebuild
+```
+
+**Linting**
+
+```bash
+npm run lint
+```
+
+**Clean Up Generated CSS Files**
+
+```bash
+npm run cleanup
+```
 
 
 ---

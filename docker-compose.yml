@@ -1,9 +1,9 @@
-version: '3.1'
+version: '3.7'
 services:
 
     app:
         build: .
-        command: npm run start:dev
+        command: npm run start:prod
         volumes:
             - "./src:/app/src"
         ports:

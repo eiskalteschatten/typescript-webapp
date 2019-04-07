@@ -59,6 +59,8 @@ But why are there so few commits? This project has existed for a long time and h
 
 ## Usage
 
+After starting the application, you can access it at http://localhost:3025.
+
 Before you use the application, you need to install all dependencies with:
 
 ```bash

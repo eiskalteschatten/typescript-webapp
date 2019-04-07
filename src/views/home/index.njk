@@ -16,5 +16,9 @@
         ** test **
     {% endmarkdown %}
 
+    <div>
+        {{ markdown | safe }}
+    </div>
+
     {# <a href="{{ "/blog" | langUrl(req.lang) }}">{{ "goToBlog" | translate(req.lang) }}</a> #}
 {% endblock %}

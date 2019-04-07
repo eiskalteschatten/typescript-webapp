@@ -2,6 +2,7 @@ import  { Router, Request, Response } from 'express';
 
 import { translate } from '../lib/translate';
 import track from '../lib/matomo';
+import { markdownToHtml } from '../lib/markdown';
 
 import Controller from '../interfaces/Controller';
 
@@ -24,6 +25,11 @@ class IndexController implements Controller {
 
         track(req, pageTitle);
 
+        const markdown: string = markdownToHtml(`
+# Controller-Rendered
+This is **controller-rendered** markdown.
+        `);
+
         res.render('home/index.njk', {
             title: pageTitle,
             items: [
@@ -31,7 +37,8 @@ class IndexController implements Controller {
                 { name : lang },
                 { name : 'item #3' },
                 { name : 'item #4' }
-            ]
+            ],
+            markdown
         });
     }
 }

@@ -20,7 +20,7 @@ class App {
         this.app.locals = {
             ...this.app.locals,
             ...config.get('locals'),
-            ...config.get('locales')
+            locales: config.get('locales')
         };
     }
 

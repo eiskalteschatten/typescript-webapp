@@ -44,5 +44,5 @@ This is **controller-rendered** markdown.
 }
 
 export default (router: Router) => {
-    const controller = new IndexController(router);
+    new IndexController(router);
 };

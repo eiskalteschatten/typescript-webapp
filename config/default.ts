@@ -42,7 +42,6 @@ export default {
         '/old-url': '/new-url'
     },
     folders: {
-        publicDistFolder: path.resolve(__dirname, '../src/public'),
         srcFolder: path.resolve(__dirname, '../src')
     }
 };

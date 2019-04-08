@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "prebuild": "./node_modules/.bin/copyfiles \"./src/views/**/*.njk\" ./dist/",
+        "prebuild": "./node_modules/.bin/copyfiles \"./src/views/**/*.njk\" ./dist/ && ./node_modules/.bin/copyfiles \"./src/public/**/*\" ./dist/",
         "build": "./node_modules/.bin/tsc",
         "build:dev": "./node_modules/.bin/ts-node --files src/index.ts",
         "start": "node ./dist/src/index.js",

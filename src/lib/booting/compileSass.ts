@@ -6,7 +6,7 @@ import * as config from 'config';
 import { CssConfigInterface } from '../../../config/default';
 
 const cssConfig: CssConfigInterface = config.get('css');
-const publicFolder: string = config.get('folders.publicDistFolder');
+const publicFolder: string = path.resolve(__dirname, '../../public');
 const srcFolder: string = config.get('folders.srcFolder');
 
 function setupCleanupOnExit(): void {

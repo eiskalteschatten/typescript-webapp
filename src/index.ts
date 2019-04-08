@@ -5,7 +5,7 @@ import mainApp from './app';
 
 const port = 3025;
 
-mainApp.setupApp().then(app => {
+mainApp.setupApp().then((app): void => {
     function onError(error: NodeJS.ErrnoException): void {
         if (error.syscall !== 'listen') {
             throw error;
@@ -36,13 +36,13 @@ mainApp.setupApp().then(app => {
 
     server.listen(port);
     server.on('error', onError);
-    server.on('listening', () => {
+    server.on('listening', (): void => {
         const address: (string | AddressInfo) = server.address();
         const bind: string = typeof address === 'string'
             ? 'pipe ' + address
             : 'port ' + address.port;
         console.log('Listening on', bind);
     });
-}).catch(error => {
+}).catch((error): void => {
     console.error(error);
 });

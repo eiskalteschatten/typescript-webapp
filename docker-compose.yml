@@ -4,8 +4,6 @@ services:
     app:
         build: .
         command: npm run start:prod
-        volumes:
-            - "./src:/app/src"
         ports:
             - "3025:3025"
             - "5858:5858"

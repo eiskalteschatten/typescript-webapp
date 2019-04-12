@@ -4,5 +4,6 @@ export default class HttpError extends Error {
     constructor(message: string, status: number = 404) {
         super(message);
         Object.setPrototypeOf(this, HttpError.prototype);
+        this.status = status;
     }
 }

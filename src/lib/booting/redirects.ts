@@ -7,7 +7,7 @@ const redirects = config.get('redirects');
 
 export default (req: Request, res: Response, next: NextFunction): void => {
     const originalUrl: string = '/' + parseRoute(req.originalUrl.replace(/\/$/, ''));
-    const regexString = `^${originalUrl}\/?$`;
+    const regexString = `^${originalUrl}/?$`;
     const regex: RegExp = new RegExp(regexString, 'g');
 
     for (const redirectedUrl in redirects) {

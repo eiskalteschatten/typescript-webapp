@@ -5,7 +5,7 @@ import * as config from 'config';
 import translations from '../translations';
 import { parseRoute } from '../lib/helper';
 
-import { LocalesInterface } from '../../config/default';
+import { LocalesInterface } from '../interfaces/Config';
 
 const locales: LocalesInterface = config.get('locales');
 

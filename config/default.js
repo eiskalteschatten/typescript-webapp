@@ -1,20 +1,8 @@
-import * as path from 'path';
+'use strict';
 
-export interface CssConfigInterface {
-    sassFilesToCompile: string[];
-}
+const path = require('path');
 
-export interface LocalesInterface {
-    defaultLanguage: string;
-    availableLanguages: string[];
-}
-
-export interface MatomoInterface {
-    url: string;
-    siteId: number;
-}
-
-export default {
+module.exports = {
     proxies: {
         '/js/libs/jquery.min.js': path.join(__dirname, '../node_modules/jquery/dist/jquery.min.js'),
         '/js/libs/jquery.min.map': path.join(__dirname, '../node_modules/jquery/dist/jquery.min.map'),
@@ -45,3 +33,4 @@ export default {
         srcFolder: path.resolve(__dirname, '../src')
     }
 };
+

@@ -4,7 +4,7 @@ import { Request } from 'express';
 import * as matomoTracker from 'matomo-tracker';
 import * as config from 'config';
 
-import { MatomoInterface } from '../../config/default';
+import { MatomoInterface } from '../interfaces/Config';
 const matomoConfig: MatomoInterface = config.get('tracking.matomo');
 
 let matomo: any;

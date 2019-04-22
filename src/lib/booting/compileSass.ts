@@ -3,7 +3,7 @@ import * as path from 'path';
 import * as compileSass from 'compile-sass';
 import * as config from 'config';
 
-import { CssConfigInterface } from '../../../config/default';
+import { CssConfigInterface } from '../../interfaces/Config';
 
 const cssConfig: CssConfigInterface = config.get('css');
 const publicFolder: string = path.resolve(__dirname, '../../public');

@@ -14,7 +14,7 @@
         "docker:rebuild": "bash -c \"trap 'docker-compose down' EXIT; docker-compose up --build\"",
         "docker:start": "bash -c \"trap 'docker-compose down' EXIT; docker-compose up\"",
         "test": "npm run lint",
-        "lint": "./node_modules/.bin/eslint ./**/*.{ts,json}"
+        "lint": "./node_modules/.bin/eslint './**/*.{ts,json}'"
     },
     "dependencies": {
         "@types/body-parser": "^1.17.0",

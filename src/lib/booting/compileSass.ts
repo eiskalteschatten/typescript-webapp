@@ -10,7 +10,7 @@ const publicFolder: string = path.resolve(__dirname, '../../public');
 const srcFolder: string = config.get('folders.srcFolder');
 
 function setupCleanupOnExit(): void {
-    process.on('SIGINT', () => {
+    process.on('SIGINT', (): void => {
         try {
             compileSass.setupCleanupOnExit(path.resolve(publicFolder, 'css/'));
             process.exit(0);
@@ -27,9 +27,9 @@ export default (app: Application): Promise<void> => {
             sassPath: path.resolve(srcFolder, 'scss/'),
             cssPath: path.resolve(publicFolder, 'css/'),
             files: cssConfig.sassFilesToCompile
-        }).then(() => {
+        }).then((): void => {
             setupCleanupOnExit();
-        }).catch(error => {
+        }).catch((error): void => {
             throw new Error(error);
         });
     }
@@ -40,13 +40,13 @@ export default (app: Application): Promise<void> => {
             sassPath: path.resolve(srcFolder, 'scss/'),
             cssPath: path.resolve(publicFolder, 'css/'),
             files: ['libs.scss']
-        }).then(() => {
+        }).then((): void => {
             app.use('/css/:cssName', compileSass({
                 sassFilePath: path.resolve(srcFolder, 'scss/')
             }));
 
             setupCleanupOnExit();
-        }).catch(error => {
+        }).catch((error): void => {
             throw new Error(error);
         });
     }

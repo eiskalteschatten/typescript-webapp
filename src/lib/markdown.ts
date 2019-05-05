@@ -8,7 +8,7 @@ export function markdownToHtml(markdown: string): string {
 
 export function markdownToHtmlWithCodeHighlighting(markdown: string): string {
     marked.setOptions({
-        highlight: (code: string) => {
+        highlight: (code: string): string => {
             return highlightjs.highlightAuto(code).value;
         }
     });

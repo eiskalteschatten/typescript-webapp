@@ -12,7 +12,7 @@ export default (app: Application): void => {
 
     // Development error handler - will print stacktrace
     if (app.get('env') === 'development') {
-        app.use((error: HttpError, req: Request, res: Response, next: NextFunction) => {
+        app.use((error: HttpError, req: Request, res: Response): void => {
             res.status(error.status || 500);
             console.error(error.message);
 
@@ -24,7 +24,7 @@ export default (app: Application): void => {
     }
     else {
         // Production error handler - no stacktraces leaked to user
-        app.use((error: HttpError, req: Request, res: Response, next: NextFunction) => {
+        app.use((error: HttpError, req: Request, res: Response): void => {
             res.status(error.status || 500);
             console.error(error.message);
             res.render('error.njk');

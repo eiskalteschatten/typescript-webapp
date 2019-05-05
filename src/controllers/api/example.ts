@@ -11,7 +11,7 @@ import HttpError from '../../errors/HttpError';
 class ExampleApiController implements Controller {
     public router: Router;
 
-    constructor(router: Router) {
+    public constructor(router: Router) {
         this.router = router;
         this.initilizeRoutes();
     }
@@ -43,6 +43,6 @@ class ExampleApiController implements Controller {
     }
 }
 
-export default (router: Router) => {
-    const controller = new ExampleApiController(router);
+export default (router: Router): void => {
+    new ExampleApiController(router);
 };

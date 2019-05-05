@@ -10,7 +10,7 @@ import Controller from '../interfaces/Controller';
 class IndexController implements Controller {
     public router: Router;
 
-    constructor(router: Router) {
+    public constructor(router: Router) {
         this.router = router;
         this.initilizeRoutes();
     }
@@ -43,6 +43,6 @@ This is **controller-rendered** markdown.
     }
 }
 
-export default (router: Router) => {
+export default (router: Router): void => {
     new IndexController(router);
 };

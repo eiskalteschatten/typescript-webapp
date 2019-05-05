@@ -51,7 +51,8 @@ module.exports = {
         "promise/catch-or-return": "error",
         "promise/param-names": "error",
         "promise/no-return-wrap": "error",
-        "@typescript-eslint/no-angle-bracket-type-assertion": [ "off" ]
+        "@typescript-eslint/no-angle-bracket-type-assertion": [ "off" ],
+        "@typescript-eslint/no-explicit-any": [ "off" ]
     },
     "overrides": [{
         "files": ["*.json"],

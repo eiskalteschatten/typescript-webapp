@@ -13,8 +13,8 @@ const locales: LocalesInterface = config.get('locales');
 export function translate(lang: string, string: string): string {
     const langStrings = translations[lang];
 
-    const useDefaultLangage = () => {
-        const defaultStrings: Array<string> = translations[locales.defaultLanguage];
+    const useDefaultLangage = (): string => {
+        const defaultStrings: string[] = translations[locales.defaultLanguage];
 
         if (defaultStrings && defaultStrings[string]) {
             return defaultStrings[string];
@@ -27,6 +27,14 @@ export function translate(lang: string, string: string): string {
     else {
         return useDefaultLangage();
     }
+}
+
+export function getLocalizedUrl(lang: string, route: string): string {
+    if (route.charAt(0) !== '/') {
+        route = '/' + route;
+    }
+
+    return '/' + lang + route;
 }
 
 export function redirectToLanguage(req: Request, res: Response, route: string): void {
@@ -50,20 +58,12 @@ export function checkLangUrl(req: Request, res: Response, route: string, next: N
     }
 }
 
-export function getLocalizedUrl(lang: string, route: string): string {
-    if (route.charAt(0) !== '/') {
-        route = '/' + route;
-    }
-
-    return '/' + lang + route;
-}
-
 export function getAllLanguageUrls(req: Request): object {
     const lang: string = req.lang;
     const urls: object = {};
     const route: string = parseRoute(req.originalUrl);
 
-    locales.availableLanguages.forEach(locale => {
+    locales.availableLanguages.forEach((locale: string): void => {
         if (locale !== lang) {
             urls[locale] = getLocalizedUrl(locale, route);
         }

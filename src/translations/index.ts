@@ -4,4 +4,4 @@ import * as de from './de.json';
 export default {
     en,
     de
-}
+};

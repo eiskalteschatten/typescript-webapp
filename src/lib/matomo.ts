@@ -13,7 +13,7 @@ let matomo: any;
 if (env !== 'development') {
     matomo = new matomoTracker(matomoConfig.siteId, matomoConfig.url);
 
-    matomo.on('error', (error: Error) => {
+    matomo.on('error', (error: Error): void => {
         console.error('Error tracking request:', error);
     });
 }
@@ -28,7 +28,7 @@ export default (req: Request, pageTitle: string): void => {
     if (env !== 'development') {
         matomo.track({
             url: url,
-            action_name: pageTitle
+            'action_name': pageTitle
         });
     }
 };

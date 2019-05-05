@@ -1,5 +1,7 @@
 # TypeScript Boilerplate Web App
 
+[![Build Status](https://travis-ci.org/eiskalteschatten/typescript-webapp.svg?branch=master)](https://travis-ci.org/eiskalteschatten/typescript-webapp)
+
 This project is a boilerplate web app based on TypeScript. It includes a few features that commonly appear in web applications in a way that is easy to use and configure.
 
 There is also a [version written in plain Node.js](https://github.com/eiskalteschatten/nodejs-webapp).

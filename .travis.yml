@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+    - "10"
+    - "11"
+    - "12"
+
+env:
+    - NODE_ENV=TEST
+
+install:
+    - npm ci
+
+script:
+    - npm run lint
+
+cache: npm

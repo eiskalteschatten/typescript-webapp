@@ -9,6 +9,7 @@ RUN npm ci
 
 COPY . /app
 
-RUN npm run build
+RUN npm run build && \
+    npm prune --production
 
 CMD ["npm", "run", "start:prod"]

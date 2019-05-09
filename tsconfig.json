@@ -3,9 +3,9 @@
         "module": "commonjs",
         "moduleResolution": "node",
         "pretty": true,
-        "sourceMap": true,
+        "sourceMap": false,
         "target": "es6",
-        "outDir": "./dist",
+        "outDir": "./dist/src",
         "baseUrl": "./src",
         "resolveJsonModule": true
     },
@@ -13,6 +13,7 @@
         "src/**/*.ts"
     ],
     "exclude": [
+        "dist",
         "node_modules"
     ]
 }

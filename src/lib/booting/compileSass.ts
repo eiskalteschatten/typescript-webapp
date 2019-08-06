@@ -1,7 +1,12 @@
 import { Application } from 'express';
 import * as path from 'path';
-import * as compileSass from 'compile-sass';
 import * as config from 'config';
+
+import {
+    default as compileSass,
+    compileSassAndSaveMultiple,
+    setupCleanupOnExit as setupCleanupOnExitCs
+} from 'compile-sass';
 
 import { CssConfigInterface } from '../../interfaces/Config';
 
@@ -12,7 +17,7 @@ const srcFolder: string = config.get('folders.srcFolder');
 function setupCleanupOnExit(): void {
     process.on('SIGINT', (): void => {
         try {
-            compileSass.setupCleanupOnExit(path.resolve(publicFolder, 'css/'));
+            setupCleanupOnExitCs(path.resolve(publicFolder, 'css/'));
             process.exit(0);
         }
         catch(error) {
@@ -23,7 +28,7 @@ function setupCleanupOnExit(): void {
 
 export default (app: Application): Promise<void> => {
     if (app.get('env') === 'staging' || app.get('env') === 'production') {
-        return compileSass.compileSassAndSaveMultiple({
+        return compileSassAndSaveMultiple({
             sassPath: path.resolve(srcFolder, 'scss/'),
             cssPath: path.resolve(publicFolder, 'css/'),
             files: cssConfig.sassFilesToCompile
@@ -36,7 +41,7 @@ export default (app: Application): Promise<void> => {
     else {
         // If not staging or production, just compile the libs.scss
 
-        return compileSass.compileSassAndSaveMultiple({
+        return compileSassAndSaveMultiple({
             sassPath: path.resolve(srcFolder, 'scss/'),
             cssPath: path.resolve(publicFolder, 'css/'),
             files: ['libs.scss']

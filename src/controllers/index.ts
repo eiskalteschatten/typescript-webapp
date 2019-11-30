@@ -1,4 +1,4 @@
-import  { Router, Request, Response } from 'express';
+import { Router, Request, Response } from 'express';
 
 import { translate } from '../lib/translate';
 import track from '../lib/matomo';
